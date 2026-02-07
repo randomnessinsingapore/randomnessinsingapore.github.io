@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title | default: site.title }}</title>
 
-  {%- include head.html -%}
-  <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js" defer></script>
+</head>
 
-  <body>
+<body>
 
-    {%- include header.html -%}
+<header class="navbar">
+    <a href="/">Home</a>
+</header>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="main-content">
-          {{ content }}
-        </div>
-      </div>
-    </main>
+<main>
+    {{ content }}
+</main>
 
-    {%- include footer.html -%}
-
-  </body>
-
+</body>
 </html>
