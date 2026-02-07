@@ -5,11 +5,13 @@ title: Home
 
 # Welcome
 
-This is my website.
+This is the website of people working in probability in Singapore.
 
 ## Sections
-- Research
-- Teaching
-- Notes
+
+- About
+- People
+- Events
+- Highlights
 
 
