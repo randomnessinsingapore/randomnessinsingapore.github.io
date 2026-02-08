@@ -11,8 +11,13 @@
 <body>
 
 <header class="navbar">
-    <a href="/">Home</a>
+  <nav>
+    {% for item in site.data.navigation %}
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
+  </nav>
 </header>
+
 
 <main>
     {{ content }}
