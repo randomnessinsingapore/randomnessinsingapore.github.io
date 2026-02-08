@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Highlights
+permalink: /highlights/
 ---
 
 # Highlights

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Plople
+permalink: /people/
 ---
 
 # People
