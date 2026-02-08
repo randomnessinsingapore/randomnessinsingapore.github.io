@@ -10,18 +10,43 @@
 
 <body>
 
-<header class="navbar">
-  <nav>
-    {% for item in site.data.navigation %}
-      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-    {% endfor %}
-  </nav>
-</header>
+    <div class="bg-loops" aria-hidden="true"></div>
+
+    <div class="page">
+
+        <header class="navbar">
+            <div class="nav-container">
+
+                <a class="nav-logo" href="{{ '/' | relative_url }}">
+                    Randomness in Singapore
+                </a>
+
+                <button class="nav-toggle" id="navToggle">☰</button>
+
+                <nav class="nav-links" id="navLinks">
+                    {% for item in site.data.navigation %}
+                    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    {% endfor %}
+                </nav>
+
+            </div>
+        </header>
+
+        <div class="page-content">
+            {{ content }}
+        </div>
 
 
-<main>
-    {{ content }}
-</main>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <p>© 2026 Randomness in Singapore</p>
+            </div>
+        </footer>
 
+    </div>
 </body>
+
+
+
+
 </html>

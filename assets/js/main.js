@@ -18,3 +18,13 @@ function toggleVisibility(elementId) {
         el.style.display = "none";
     }
 }
+
+
+const toggle = document.getElementById("navToggle");
+const links = document.getElementById("navLinks");
+
+if (toggle){
+  toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+  });
+}

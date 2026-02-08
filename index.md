@@ -1,17 +1,8 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
 
-# Welcome
+# Randomness in Singapore
 
-This is the website of people working in probability in Singapore.
-
-## Sections
-
-- About
-- People
-- Events
-- Highlights
-
-
+The society of people working in probability in Singapore.
