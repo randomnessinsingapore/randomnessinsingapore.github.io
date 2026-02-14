@@ -150,7 +150,7 @@ a:hover {
    html, body { height: 100%; }
 
 body{
-  background: #c6ac6a; 
+  background: #020620; 
 }
 
 .page{
@@ -174,7 +174,7 @@ body{
   margin: 0 auto;
   max-width: 900px;
   padding: 40px 30px;
-  background: #f6f2e9;   /* main body background */
+  background: #f1aa05;   /* main body background */   /* issue : this is not the main body background */
   border-radius: 10px;
 }
 
@@ -205,13 +205,17 @@ body{
 }
 
 
+/* =========================
+   Background
+   ========================= */
+
 /* Background layer (behind everything) */
 .bg-loops{
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: rgba(255, 0, 0, 0.08); /* TEMP test tint */
+  overflow: hidden;
 }
 
 /* Ensure site content is above background */
@@ -222,43 +226,32 @@ body{
 
 /* Give “cards” solid background for readability */
 .home-container{
-  background: rgba(244, 239, 229, 0.96);
+  background: rgba(244, 239, 229, 0.96);  /* this is the main body background for some reason */
   backdrop-filter: blur(2px);
 }
 
-
-
-/* Loops in the background: test */
-
-.bg-loops::before,
-.bg-loops::after{
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 999px;
-  border: 10px solid rgba(20, 20, 20, 0.12);
-  filter: blur(0.2px);
-  animation: drift 10s ease-in-out infinite alternate;
+.bg-canvas{
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.bg-loops::before{
-  top: 15%;
-  left: 10%;
+/* The SVG fills the viewport */
+.bg-svg{
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.bg-loops::after{
-  top: 55%;
-  left: 50%;
-  width: 420px;
-  height: 420px;
-  animation-duration: 2s;
+/* Contour line look */
+.bg-contour{
+  fill: none;
+  stroke: rgba(231, 8, 8, 0.84);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
 }
 
-@keyframes drift{
-  from { transform: translate(0,100px) rotate(30deg); }
-  to   { transform: translate(40px, -30px) rotate(25deg); }
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .bg-canvas{ display: none; } /* simplest fallback */
 }
-
-
-
