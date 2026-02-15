@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Plople
+title: People
 permalink: /people/
+hero_image: /assets/images/gbtb_colored.jpg
 ---
 
 # People

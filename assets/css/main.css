@@ -1,43 +1,156 @@
+:root{
+  --deep-blue: rgb(2, 6, 32);
+  --card: rgba(255, 255, 255, 0.99); /* rgba(244,239,229,.99);*/
+  --text: rgb(2, 6, 32);
+  --cream: #ffffff; /* #f4efe5;*/
+  --text-color: #020620;
+  --background-color: #ffffff;
+  --accent-color: #2b6cb0;
+  --max-width: 900px;
+  --hero-gap: 24px;
+  --body-gap: 80px;
+  --hover-color: #ae975c;
+}
+
+/* Make widths include padding + border */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+
+/* 1) Background layer */
+body{
+  margin: 0;
+  background: var(--deep-blue);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.bg-loops{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-canvas{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 2) Page layer (everything above background) */
+.page{
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main{
+  flex: 1;
+}
+
+/* 3) Section layer (full width bands) */
+.section{
+  width: 100%;
+  padding: var(--body-gap) 0;
+}
+
+/* 4) Card layer (centered readable panel) */
+.card{
+  width: 80%;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  padding: 44px 36px;
+
+  background: var(--card);
+  color: var(--text);
+  border-radius: 0px;
+  backdrop-filter: blur(2px);
+}
+
+/* Typography inside cards */
+.card h1{ margin-top: 0; font-size: 2.4rem; }
+.card p{ line-height: 1.65; }
+
+/* Home hero */
+.hero-band{
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hero-frame{
+  width: 100%;
+  max-height: 500px;
+  aspect-ratio: 16 / 5;   
+  overflow: hidden;
+  position: relative;
+  border-bottom: 10px solid rgb(255, 255, 255);
+}
+
+
+.hero-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;      
+  object-fit: cover;  
+  display: block;
+  filter: saturate(0.85) contrast(0.95) brightness(0.92);
+}
+
+/* Dark overlay to make text readable */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(2,6,32,0.55), rgba(2,6,32,0.70)),
+    radial-gradient(circle at 30% 20%, rgba(198,172,106,0.18), transparent 15%);
+}
+
+/* Title centered */
+.hero-title{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0 18px;
+  text-align: center;
+
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 800px){
+  .section{ padding: 40px 0; }
+  .card{ width: 92%; padding: 34px 22px; }
+  .hero-box{ height: 220px; }
+  .hero-img{ height: 220px; }
+}
+
 /* =========================
-   Base layout
+   Footer
    ========================= */
 
-:root {
-    --text-color: #222;
-    --background-color: #ffffff;
-    --accent-color: #2b6cb0;
-    --max-width: 900px;
+.site-footer{
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  padding-top: 10px; 
 }
 
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text-color);
-    background: var(--background-color);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-/* Center page content */
-main {
-    max-width: var(--max-width);
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* Headings */
-h1, h2, h3 {
-    margin-top: 1.4em;
-}
-
-/* Links */
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+.footer-container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--deep-blue);
 }
 
 
@@ -47,33 +160,65 @@ a:hover {
    ========================= */
 
 .navbar{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: #f6f2e9; /* light creamy */
-    border-bottom: 1px solid var(--border);
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--cream);
+  color: var(--deep-blue);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+.navbar a{
+  text-decoration: none;              /* remove underline */
+  color: var(--deep-blue);
+  position: relative;
+  /*
+  font-weight: 500;
+  transition: color 0.25s ease;
+  */
+}
+
+/* Hover effect */
+.navbar a:hover{
+  color: var(--hover-color);                    
+}
+
+.navbar a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--hover-color);
+  transition: width 0.25s ease;
+}
+
+.navbar a:hover::after{
+  width: 100%;
 }
 
 .nav-container{
-    max-width: var(--container);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
+  max-width: var(--container);
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
 }
 
 /* Logo */
 .nav-logo{
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 2rem;
 }
 
 /* Links */
 .nav-links{
     display: flex;
     gap: 22px;
+    font-size: 1.5rem;
 }
 
 /* Hamburger */
@@ -96,7 +241,7 @@ a:hover {
         position: absolute;
         top: 60px;
         right: 0;
-        background: #f6f2e9;
+        background: var(--cream);
         flex-direction: column;
         width: 200px;
         padding: 15px;
@@ -115,143 +260,4 @@ a:hover {
     .nav-links a:hover{
         color: var(--accent);
     }
-}
-
-
-/* =========================
-   Hero band (carousel area)
-   ========================= */
-
-.hero-band{
-  width: 100%;
-  padding: 30px 0;
-}
-
-.hero-carousel{
-  max-width: var(--container);
-  margin: 0 auto;
-}
-
-.hero-slide{
-  height: 320px;
-  background: #dcd6c8;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  color: #555;
-}
-
-/* =========================
-   Homepage body
-   ========================= */
-
-   html, body { height: 100%; }
-
-body{
-  background: #020620; 
-}
-
-.page{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.page-content{
-  flex: 1;  /* pushes footer to bottom */
-}
-
-/* full-width outer band (the future "side" background) */
-.home-body{
-  padding: 50px 0;
-}
-
-/* centered main content area (the 70% body) */
-.home-container{
-  width: 70%;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 40px 30px;
-  background: #f1aa05;   /* main body background */   /* issue : this is not the main body background */
-  border-radius: 10px;
-}
-
-
-@media (max-width: 800px){
-  .home-body > *{
-    width: 90%;
-  }
-}
-
-
-/* =========================
-   Footer
-   ========================= */
-
-.site-footer{
-  background: #f6f2e9;
-  border-top: 1px solid var(--border);
-}
-
-.footer-container{
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 25px 20px;
-  text-align: center;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-
-/* =========================
-   Background
-   ========================= */
-
-/* Background layer (behind everything) */
-.bg-loops{
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/* Ensure site content is above background */
-.page{
-  position: relative;
-  z-index: 1;
-}
-
-/* Give “cards” solid background for readability */
-.home-container{
-  background: rgba(244, 239, 229, 0.96);  /* this is the main body background for some reason */
-  backdrop-filter: blur(2px);
-}
-
-.bg-canvas{
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* The SVG fills the viewport */
-.bg-svg{
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Contour line look */
-.bg-contour{
-  fill: none;
-  stroke: rgba(231, 8, 8, 0.84);
-  stroke-width: 3;
-  vector-effect: non-scaling-stroke;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .bg-canvas{ display: none; } /* simplest fallback */
 }

@@ -3,13 +3,20 @@ layout: default
 ---
 
 <section class="hero-band">
-  <div class="hero-carousel">
-    <div class="hero-slide">Carousel placeholder</div>
+  <div class="hero-frame">
+    <img
+      class="hero-img"
+      src="{{ page.hero_image | relative_url }}"
+      alt=""
+    >
+    <div class="hero-overlay"></div>
+    <h1 class="hero-title">{{ page.hero_title | default: page.title }}</h1>
   </div>
 </section>
 
-<section class="home-body">
-  <div class="home-container">
+<section class="section">
+  <div class="card">
     {{ content }}
   </div>
 </section>
+
