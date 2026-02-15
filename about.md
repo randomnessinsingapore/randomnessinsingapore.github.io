@@ -2,7 +2,7 @@
 layout: default
 title: About
 permalink: /about/
-hero_image: /assets/images/gbtb_colored.jpg
+hero_image: /assets/images/Singapore_banner_3.png
 ---
 
 # About

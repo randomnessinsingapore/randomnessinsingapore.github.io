@@ -9,7 +9,7 @@
   --max-width: 900px;
   --hero-gap: 24px;
   --body-gap: 80px;
-  --hover-color: #ae975c;
+  --gold: #ae975c;
 }
 
 /* Make widths include padding + border */
@@ -67,6 +67,8 @@ body{
   color: var(--text);
   border-radius: 0px;
   backdrop-filter: blur(2px);
+
+  border: 0px solid red;
 }
 
 /* Typography inside cards */
@@ -86,7 +88,7 @@ body{
   aspect-ratio: 16 / 5;   
   overflow: hidden;
   position: relative;
-  border-bottom: 10px solid rgb(255, 255, 255);
+  border-bottom: 80px solid rgb(255, 255, 255);
 }
 
 
@@ -104,9 +106,10 @@ body{
 .hero-overlay{
   position: absolute;
   inset: 0;
-  background:
+  /*background:
     linear-gradient(to bottom, rgba(2,6,32,0.55), rgba(2,6,32,0.70)),
     radial-gradient(circle at 30% 20%, rgba(198,172,106,0.18), transparent 15%);
+  */
 }
 
 /* Title centered */
@@ -117,13 +120,22 @@ body{
   place-items: center;
   margin: 0;
   padding: 0 18px;
+  z-index: 3;
   text-align: center;
+}
 
-  color: #ffffff;
-  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+.hero-title-badge{
+  display: inline-block;
+  padding: 12px 22px;
+  background: white;  
+  color: var(--gold);                         
+  border-radius: 0px;                    
+  border: 1px solid rgba(2, 6, 32, 0.15);
+  box-shadow: 10px 10px 30px rgba(0,0,0,1);
   font-weight: 650;
-  letter-spacing: 0.2px;
-  z-index: 2;
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  line-height: 1.1;
+  backdrop-filter: blur(1px);
 }
 
 /* Mobile */
@@ -163,15 +175,15 @@ body{
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--cream);
-  color: var(--deep-blue);
+  background: white;
+  color: var(--gold);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
 
 .navbar a{
   text-decoration: none;              /* remove underline */
-  color: var(--deep-blue);
+  color: var(--gold);
   position: relative;
   /*
   font-weight: 500;
@@ -181,7 +193,7 @@ body{
 
 /* Hover effect */
 .navbar a:hover{
-  color: var(--hover-color);                    
+  color: var(--deep-blue);                    
 }
 
 .navbar a::after{
@@ -191,7 +203,7 @@ body{
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background: var(--hover-color);
+  background: var(--deep-blue);
   transition: width 0.25s ease;
 }
 

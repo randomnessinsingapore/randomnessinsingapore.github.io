@@ -2,7 +2,7 @@
 layout: home
 title: Home
 hero_title: Randomness in Singapore
-hero_image: /assets/images/gbtb_colored.jpg
+hero_image: /assets/images/Singapore_banner_2.jpg
 ---
 
 

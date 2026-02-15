@@ -2,7 +2,7 @@
 layout: default
 title: People
 permalink: /people/
-hero_image: /assets/images/gbtb_colored.jpg
+hero_image: /assets/images/Singapore_banner.jpg
 ---
 
 # People
