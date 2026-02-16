@@ -52,7 +52,7 @@ if (toggle){
   const LINE_WIDTH = 5;
 
   // Value-noise parameters
-  const NOISE_SCALE = 0.06;   // spatial frequency (smaller = smoother, bigger = busier)
+  const NOISE_SCALE = 0.025;   // spatial frequency (smaller = smoother, bigger = busier)
 
   // --- Resize canvas to device pixels ---
   function resize() {
@@ -171,7 +171,7 @@ if (toggle){
 
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-    ctx.strokeStyle = `rgba(255,255,255,${LINE_ALPHA})`;
+    ctx.strokeStyle = `rgba(2,6,32,${LINE_ALPHA})`;
     ctx.lineWidth = LINE_WIDTH;
 
     // Precompute scalar field on a coarse grid
