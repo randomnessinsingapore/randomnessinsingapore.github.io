@@ -6,6 +6,7 @@
   --hero-gap: 24px;
   --body-gap: 80px;
   --gold: rgb(174, 151, 92);
+  --header-color: rgb(28, 125, 35);
 }
 
 /* Make widths include padding + border */
@@ -119,8 +120,8 @@ body{
 .hero-title-badge{
   display: inline-block;
   padding: 12px 22px;
-  background: white;  
-  color: var(--gold);                         
+  background: white;
+  color: var(--header-color);                         
   border-radius: 0px;                    
   border: 1px solid rgba(2, 6, 32, 0.15);
   box-shadow: 10px 10px 30px rgba(0,0,0,1);
@@ -168,14 +169,14 @@ body{
   top: 0;
   width: 100%;
   background: white;
-  color: var(--gold);
+  color: var(--header-color);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
 
 .navbar a{
   text-decoration: none;              /* remove underline */
-  color: var(--gold);
+  color: var(--header-color);
   position: relative;
   /*
   font-weight: 500;
