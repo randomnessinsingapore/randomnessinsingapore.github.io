@@ -43,13 +43,13 @@ if (toggle){
   const ctx = canvas.getContext("2d", { alpha: true });
 
   // ---- Tune these knobs ----
-  const GRID_W = 170;          // resolution of the scalar field (lower = faster)
-  const GRID_H = 120;
+  const GRID_W = 240;          // resolution of the scalar field (lower = faster)
+  const GRID_H = 170;
   const LEVELS = 5;            // number of contour levels
   const SPEED = 0.01;         // drift speed
   const FPS = 24;              // cap fps for performance
   const LINE_ALPHA = 1;     // opacity of contour lines
-  const LINE_WIDTH = 5;
+  const LINE_WIDTH = 4;
 
   // Value-noise parameters
   const NOISE_SCALE = 0.025;   // spatial frequency (smaller = smoother, bigger = busier)
@@ -74,6 +74,83 @@ if (toggle){
     x ^= x >> 16;
     return (x >>> 0) / 4294967296;
   }
+
+  // --- Small epsilon for matching endpoints ---
+const EPS = 1;
+console.log(EPS);
+
+// Check if two points are the same
+function samePoint(a, b) {
+  return Math.abs(a.x - b.x) < EPS && Math.abs(a.y - b.y) < EPS;
+}
+
+// Stitch unordered line segments into polylines
+function buildPolylines(segments) {
+  const lines = [];
+
+  while (segments.length > 0) {
+    const seg = segments.pop();
+    const line = [
+      { x: seg.x1, y: seg.y1 },
+      { x: seg.x2, y: seg.y2 }
+    ];
+
+    let extended = true;
+
+    while (extended) {
+      extended = false;
+
+      for (let i = segments.length - 1; i >= 0; i--) {
+        const s = segments[i];
+
+        const start = line[0];
+        const end = line[line.length - 1];
+
+        if (samePoint({x:s.x1,y:s.y1}, end)) {
+          line.push({x:s.x2,y:s.y2});
+        } else if (samePoint({x:s.x2,y:s.y2}, end)) {
+          line.push({x:s.x1,y:s.y1});
+        } else if (samePoint({x:s.x1,y:s.y1}, start)) {
+          line.unshift({x:s.x2,y:s.y2});
+        } else if (samePoint({x:s.x2,y:s.y2}, start)) {
+          line.unshift({x:s.x1,y:s.y1});
+        } else {
+          continue;
+        }
+
+        segments.splice(i, 1);
+        extended = true;
+      }
+    }
+
+    lines.push(line);
+  }
+
+  return lines;
+}
+
+// Draw Catmull–Rom spline using cubic Bézier segments
+function drawSpline(points) {
+  if (points.length < 2) return;
+
+  ctx.moveTo(points[0].x, points[0].y);
+
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = points[i - 1] || points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] || p2;
+
+    const c1x = p1.x + (p2.x - p0.x) / 6;
+    const c1y = p1.y + (p2.y - p0.y) / 6;
+
+    const c2x = p2.x - (p3.x - p1.x) / 6;
+    const c2y = p2.y - (p3.y - p1.y) / 6;
+
+    ctx.bezierCurveTo(c1x, c1y, c2x, c2y, p2.x, p2.y);
+  }
+}
+
 
   // Smoothstep interpolation
   function smooth(t) { return t * t * (3 - 2 * t); }
@@ -103,7 +180,7 @@ if (toggle){
     let freq = 1;
     let sumAmp = 0;
 
-    for (let o = 0; o < 3; o++) {
+    for (let o = 0; o < 2; o++) {
       v += amp * valueNoise(x * freq, y * freq);
       sumAmp += amp;
       amp *= 0.5;
@@ -203,7 +280,7 @@ if (toggle){
       const phase = li * 0.65;  // per-level phase offset
       const iso = base + amp * Math.sin(omega * t + phase);
 
-      ctx.beginPath();
+      const segments = [];
 
       for (let y = 0; y < GRID_H - 1; y++) {
         for (let x = 0; x < GRID_W - 1; x++) {
@@ -212,7 +289,6 @@ if (toggle){
           const vBL = field[(y + 1) * GRID_W + x];
           const vBR = field[(y + 1) * GRID_W + (x + 1)];
 
-          // Build the case index (TL,TR,BR,BL) > iso
           const c =
             (vTL > iso ? 8 : 0) |
             (vTR > iso ? 4 : 0) |
@@ -226,19 +302,23 @@ if (toggle){
             const p1 = edgePoint(e1, x, y, vTL, vTR, vBR, vBL, iso);
             const p2 = edgePoint(e2, x, y, vTL, vTR, vBR, vBL, iso);
 
-            // Map grid coords to canvas pixels
-            const x1 = p1[0] * gxToX;
-            const y1 = p1[1] * gyToY;
-            const x2 = p2[0] * gxToX;
-            const y2 = p2[1] * gyToY;
-
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
+            segments.push({
+              x1: p1[0] * gxToX,
+              y1: p1[1] * gyToY,
+              x2: p2[0] * gxToX,
+              y2: p2[1] * gyToY
+            });
           }
         }
       }
 
-      // Slight variation per level (optional)
+      const polylines = buildPolylines(segments);
+
+      ctx.beginPath();
+      for (const line of polylines) {
+        drawSpline(line);
+      }
+
       ctx.globalAlpha = 0.75 + 0.25 * (li / LEVELS);
       ctx.stroke();
     }
