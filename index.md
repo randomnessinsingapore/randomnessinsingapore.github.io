@@ -6,6 +6,7 @@ hero_image: /assets/images/trees.jpg
 ---
 
 
+# Welcome
 
 This the website of the community of people working in areas related to randomness and its ramifications, broadly construed, in Singapore. *Randomness in Singapore* aims to be a platform to network and keep ourselves abreast of the latest trends and developments in stochastics and its applications.
 
