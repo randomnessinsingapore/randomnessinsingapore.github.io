@@ -46,18 +46,19 @@ body{
 
 .site-main{
   flex: 1;
+  background: rgba(255, 245, 216, 0.35);
 }
 
 /* 3) Section layer (full width bands) */
 .section{
   width: 100%;
   padding: var(--body-gap) 0;
-  background: rgba(255, 245, 216, 0.35);
+/*  background: rgba(255, 245, 216, 0.35);*/
 }
 
 /* 4) Card layer (centered readable panel) */
 .card{
-  width: 80%;
+  width: min(80%, 1400px);
   font-size: 1.5rem;
   margin: 0 auto;
   padding: 44px 36px;
@@ -149,13 +150,13 @@ body{
 .site-footer{
   background: var(--cream);
   border-top: 1px solid var(--deep-blue);
-  padding-top: 10px; 
+  padding-top: 0px; 
 }
 
 .footer-container{
   max-width: var(--container);
   margin: 0 auto;
-  padding: 25px 20px;
+  padding: 0px 20px;
   text-align: center;
   font-size: 0.95rem;
   color: var(--deep-blue);
