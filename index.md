@@ -8,7 +8,7 @@ hero_image: /assets/images/trees.jpg
 
 # Welcome
 
-This the website of the community of people working in areas related to randomness and its ramifications, broadly construed, in Singapore. *Randomness in Singapore* aims to be a platform to network and keep ourselves abreast of the latest trends and developments in stochastics and its applications.
+This is the website of the community of people working in areas related to randomness and its ramifications, broadly construed, in Singapore. *Randomness in Singapore* aims to be a platform to network and keep ourselves abreast of the latest trends and developments in stochastics and its applications.
 
 One of our key activities is a bi-annual meeting to bring together our community and possibly leading external experts. We aim to have our first event in Fall 2026.
 
