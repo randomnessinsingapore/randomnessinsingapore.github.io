@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<section class="section">
+  <div class="team-grid">
+  {% for person in page.profiles %}
+    <div class="team-card">
+      <img src="/assets/images/people/{{ person.photo }}" alt="{{ person.name }}">
+      <div class="person-name"><a href="https://{{ person.website }}" target="_blank">{{ person.name }}</a></div>
+      <div class="person-institution">{{ person.institution }}</div>
+      <div class="person-research">{{ person.research }}</div>
+    </div>
+  {% endfor %}
+</div>
+  </div>
+</section>
+
