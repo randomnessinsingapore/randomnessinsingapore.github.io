@@ -271,3 +271,82 @@ body{
         color: var(--deep-blue);
     }
 }
+
+/* =========================
+   People
+   ========================= */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px; 
+  justify-items: center;
+}
+
+.team-card {
+  text-align: center;
+  width: 340px;
+  margin-bottom: 50px;
+}
+
+.team-card img {
+  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+
+  object-fit: cover;         /* crop to fill */
+  object-position: center top;  /* center horizontally, top vertically */
+
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* Team card links */
+.team-card a {
+  position: relative;         /* for ::after positioning */
+  color: #0077cc;             /* link color */
+  text-decoration: none;       /* remove default underline */
+}
+
+/* Visited links look the same */
+.team-card a:visited {
+  color: inherit;
+}
+
+/* Underline pseudo-element */
+.team-card a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  width: 100%;                /* full width of text */
+  height: 2px;                /* underline thickness */
+  background-color: currentColor;
+  transform: translateX(-50%) scaleX(0);  /* start hidden at center */
+  transform-origin: center;   /* grow from center */
+  transition: transform 0.3s ease;  /* smooth animation */
+}
+
+/* Hover effect: grow underline */
+.team-card a:hover::after,
+.team-card a:focus::after {
+  transform: translateX(-50%) scaleX(1);  /* full underline */
+}
+
+.person-name {
+  font-weight: 450;
+  margin-bottom: -2px;
+}
+
+.person-institution {
+  font-size:1.15rem;
+  margin-bottom: 2px;
+}
+
+.person-research {
+  font-size:1rem;
+  font-style: italic;
+}
