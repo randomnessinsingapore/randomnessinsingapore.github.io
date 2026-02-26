@@ -122,7 +122,7 @@ body{
 
 .hero-title-badge{
   display: inline-block;
-  padding: 12px 22px;
+  padding: 8px 15px;
   background: rgb(251, 247, 237);
   color: var(--header-color);                         
   border-radius: 0px;                    
