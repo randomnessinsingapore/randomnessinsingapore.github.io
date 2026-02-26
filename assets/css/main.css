@@ -308,7 +308,7 @@ body{
 /* Team card links */
 .team-card a {
   position: relative;         /* for ::after positioning */
-  color: #0077cc;             /* link color */
+  color: inherit;             /* link color */
   text-decoration: none;       /* remove default underline */
 }
 
