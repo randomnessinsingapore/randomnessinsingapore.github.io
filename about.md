@@ -2,7 +2,7 @@
 layout: default
 title: About
 permalink: /about/
-hero_image: /assets/images/trees.jpg
+hero_image: /assets/images/trees_2.jpg
 ---
 
 # About
