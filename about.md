@@ -7,17 +7,8 @@ hero_image: /assets/images/trees_2.jpg
 
 # About
 
-Randomness in Singapore is the community of people working in areas related to randomness and its ramifications, broadly construed, in Singapore. We aim to be a platform to network and keep ourselves abreast of the latest trends and developments in stochastics and its applications.
+Randomness in Singapore is a community of researchers engaged in the study of randomness and its many applications across disciplines in Singapore. It serves as a platform to foster connections, exchange ideas, and stay up to date with the latest developments in stochastic processes and related fields.
 
-One of our key activities is a bi-annual meeting to bring together our community and possibly leading external experts. We aim to have our first event in Fall 2026.
+One of our core initiatives is a biannual meeting that brings together members of the community, along with leading international experts. Our inaugural event is planned for Fall 2026.
 
-Currently the organizers are Daniel Bartl, Milind Hegde, Matteo Mucciconi and Lihan Wang.
-
-
-https://sites.google.com/view/lihan/about-me
-
-https://milindhegde.github.io
-
-https://sites.google.com/site/danielbartlmath/
-
-https://matteomucciconi.github.io
+Currently the organizers are [Daniel Bartl](https://sites.google.com/site/danielbartlmath/) (NUS), [Milind Hegde](https://milindhegde.github.io) (NTU), [Matteo Mucciconi](https://matteomucciconi.github.io) (NUS), and [Lihan Wang](https://sites.google.com/view/lihan/about-me) (NUS).
