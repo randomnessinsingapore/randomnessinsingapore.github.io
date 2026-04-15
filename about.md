@@ -7,16 +7,17 @@ hero_image: /assets/images/trees_2.jpg
 
 # About
 
-Content coming soon.
+Randomness in Singapore is the community of people working in areas related to randomness and its ramifications, broadly construed, in Singapore. We aim to be a platform to network and keep ourselves abreast of the latest trends and developments in stochastics and its applications.
 
-## Lorem Ipsum 1
+One of our key activities is a bi-annual meeting to bring together our community and possibly leading external experts. We aim to have our first event in Fall 2026.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Currently the organizers are Daniel Bartl, Milind Hegde, Matteo Mucciconi and Lihan Wang.
 
-## Lorem Ipsum 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+https://sites.google.com/view/lihan/about-me
 
-## Lorem Ipsum 3
+https://milindhegde.github.io
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+https://sites.google.com/site/danielbartlmath/
+
+https://matteomucciconi.github.io
