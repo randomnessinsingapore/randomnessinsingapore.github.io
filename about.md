@@ -11,4 +11,4 @@ Randomness in Singapore is a community of researchers engaged in the study of ra
 
 One of our core initiatives is a biannual meeting that brings together members of the community, along with leading international experts. Our inaugural event is planned for Fall 2026.
 
-Currently the organizers are [Daniel Bartl](https://sites.google.com/site/danielbartlmath/) (NUS), [Milind Hegde](https://milindhegde.github.io) (NTU), [Matteo Mucciconi](https://matteomucciconi.github.io) (NUS), and [Lihan Wang](https://sites.google.com/view/lihan/about-me) (NUS).
+The current organizers are [Daniel Bartl](https://sites.google.com/site/danielbartlmath/) (NUS), [Milind Hegde](https://milindhegde.github.io) (NTU), [Matteo Mucciconi](https://matteomucciconi.github.io) (NUS), and [Lihan Wang](https://sites.google.com/view/lihan/about-me) (NUS).
