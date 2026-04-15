@@ -23,19 +23,19 @@ profiles:
     research: Probability theory, Machine Learning.
 
   - name: Daniel Bartl
-    photo: Daniel_Bartl.jpg
+    photo: Daniel_Bartl.jpeg
     website: https://sites.google.com/site/danielbartlmath/
     institution: Assistant professor, NUS
     research: High-Dimensional Probability & Statistics, robust Optimization.
 
   - name: Lihan Wang
-    photo: Lihan_Wang.jpg
+    photo: Lihan_Wang.jpeg
     website: https://sites.google.com/view/lihan/about-me
     institution: Assistant professor, NUS
     research: Probability theory, applied analysis.
 
   - name: Rongfeng Sun
-    photo: Rongfeng_Sun.jpg
+    photo: Rongfeng_Sun.jpeg
     website: https://sites.google.com/view/rongfengsun/home
     institution: Professor, NUS
     research: Probability theory, Statistical Mechanics.
@@ -47,7 +47,7 @@ profiles:
     research: Probability theory, Stochastic Analysis.
 
   - name: Hemant Tyagi
-    photo: Hemant_Tyagi.jpg
+    photo: Hemant_Tyagi.jpeg
     website: https://hemant-tyagi.github.io
     institution: Associate professor, NTU
     research: High-dimensional statistics, Optimization, Statistical learning theory.
